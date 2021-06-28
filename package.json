@@ -1,5 +1,5 @@
 {
-    "name": "vmnavarro/react-native-photo-editor",
+    "name": "@vmnavarro94/react-native-photo-editor",
     "version": "1.0.0",
     "description": "React Native: Native Photo Editor",
     "main": "index.tsx",
