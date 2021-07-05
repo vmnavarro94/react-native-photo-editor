@@ -13,6 +13,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.graphics.Typeface;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -750,11 +751,16 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
                 UCropActivity.ALL, // When 'rotate'-tab active
                 UCropActivity.ALL  // When 'aspect ratio'-tab active
         );
-
+        options.setStatusBarColor(Color.parseColor("#21242F"));
+        options.setToolbarColor(Color.parseColor("#21242F"));
+        options.setRootViewBackgroundColor(Color.parseColor("#21242F"));
+        options.setActiveControlsWidgetColor(Color.parseColor("#4F3BEB"));
+        options.setToolbarWidgetColor(Color.parseColor("#FFFFFF"));
 
         UCrop uCrop = UCrop
                 .of(uri, Uri.fromFile(new File(this.getTmpDir(this), UUID.randomUUID().toString() + ".jpg")))
-                .withOptions(options);
+                .withOptions(options)
+                .withAspectRatio(1,1);
 
         uCrop.start(this);
     }
